@@ -25,6 +25,9 @@ module.exports = {
         128: "32rem",
         144: "36rem",
       },
+      maxWidth: {
+        content: "64rem",
+      },
       borderRadius: {
         "4xl": "2rem",
       },

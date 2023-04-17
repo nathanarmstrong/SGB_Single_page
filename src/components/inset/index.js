@@ -1,6 +1,6 @@
-export const Inset = ({ name, children }) => {
+export const Inset = ({ children }) => {
   return (
-    <div data-name={name} className="max-w-content m-auto py-8">
+    <div className="md:max-w-content max-w-[16rem]  m-auto py-8">
       {children}
     </div>
   );

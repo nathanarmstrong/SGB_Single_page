@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  overflow-x: hidden;
   font-family: "Poppins";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11,6 +12,9 @@ body {
 
 code {
   font-family: "Poppins";
+}
+#root {
+  overflow-x: hidden;
 }
 html {
   @apply text-dark;

@@ -1,5 +1,3 @@
-import { Inset } from "components";
-
 export const IconList = () => {
   return (
     <section data-name="IconList" className="bg-gray-light">

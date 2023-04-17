@@ -1,5 +1,4 @@
 export const NumberedInfo = ({ img, title, ListText }) => {
-  console.log("LIST TEXT", ListText);
   return (
     <div>
       <div className="relative">

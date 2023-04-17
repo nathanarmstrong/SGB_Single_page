@@ -12,3 +12,6 @@ body {
 code {
   font-family: "Poppins";
 }
+html {
+  @apply text-dark;
+}

@@ -11,10 +11,11 @@ module.exports = {
     colors: {
       gray: "#f5f5f5",
       "gray-light": "#f9f9f9",
-      "gray-dark": "#333333",
+      "gray-dark": "#eeeeee",
+      dark: "#333333",
       "gray-blue": "#d7e1e9",
       "gray-blue-light": "#cbdeef",
-      // "gray-blue-dark": "#a8d3ef",
+      red: "#e27571",
     },
     fontFamily: {
       sans: ["Graphik", "sans-serif"],
@@ -26,7 +27,7 @@ module.exports = {
         144: "36rem",
       },
       maxWidth: {
-        content: "64rem",
+        content: "68rem",
       },
       borderRadius: {
         "4xl": "2rem",

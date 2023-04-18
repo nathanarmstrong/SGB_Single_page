@@ -1,14 +1,28 @@
+import { useRef } from "react";
 import { Inset, Testimonial } from "components";
+import { useIsInViewport } from "utils";
 
 export const Reviews = () => {
+  const elementRef = useRef();
+  const isInViewport = useIsInViewport(elementRef);
+
+  // ANIMATIONS
+  const getUnderlineStyle = (inViewPort) => ({
+    transition: "all 0.5s ease-in",
+    transform: inViewPort ? "" : "scalex(0.2)",
+    transformOrigin: "left",
+  });
+
   return (
     <section data-name="Reviews" className="bg-gray-blue">
       <Inset>
-        <div className="flex justify-end ">
+        <div className="flex justify-end " ref={elementRef}>
           <div>
-            <h2 className="md:text-8xl text-5xl font-bold border-b-2 py-4">
-              300,00 +
-            </h2>
+            <h2 className="md:text-8xl text-5xl font-bold py-4">300,00 +</h2>
+            <span
+              className="h-[2px] bg-dark w-full block"
+              style={getUnderlineStyle(isInViewport)}
+            ></span>
             <p className="my-6 md:text-xl">
               review from <span className="font-bold ">happy customers</span>
             </p>

@@ -1,18 +1,20 @@
 import { useState, useEffect } from "react";
-import { PopupButton, useCalendlyEventListener } from "react-calendly";
+import { PopupButton } from "react-calendly";
 
 export const Calendly = ({ email, firstName, lastName }) => {
   const [error, setError] = useState();
 
   useEffect(() => {
-    setError();
+    checkEmail();
   }, [email, firstName, lastName]);
-  useCalendlyEventListener({
-    onProfilePageViewed: () => console.log("onProfilePageViewed"),
-    onDateAndTimeSelected: () => console.log("onDateAndTimeSelected"),
-    onEventTypeViewed: () => console.log("onEventTypeViewed"),
-    onEventScheduled: (e) => console.log(e.data.payload),
-  });
+
+  const checkEmail = () => {
+    if (email && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
+      setError("Invalid email address");
+    } else {
+      setError();
+    }
+  };
 
   const prefillData = {
     email: email,
@@ -23,10 +25,12 @@ export const Calendly = ({ email, firstName, lastName }) => {
 
   return (
     <div className="text-center">
-      {!firstName || !lastName || !email ? (
+      {!firstName || !lastName || !email || error ? (
         <button
           onClick={() => {
-            setError("Please fill out all fields");
+            if (!error) {
+              setError("Please fill out all fields");
+            }
           }}
           className="rounded-full bg-gray-blue-light/50 px-4 py-2 font-medium w-full my-2 cursor-not-allowed"
         >
@@ -38,7 +42,7 @@ export const Calendly = ({ email, firstName, lastName }) => {
           prefill={prefillData}
           rootElement={document.getElementById("root")}
           text="SCHEDULE APPOINTMENT"
-          className="rounded-full bg-gray-blue-light px-4 py-2 font-medium w-full my-2"
+          className="rounded-full bg-gray-blue-light px-4 py-2 font-medium w-full my-2 hover:bg-white border-2 border-gray-blue-light"
         />
       )}
       {error && <p className="text-red">{error}</p>}

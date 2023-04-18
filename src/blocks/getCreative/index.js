@@ -1,8 +1,25 @@
+import { useRef } from "react";
 import { Inset, CallToAction } from "components";
+import { useIsInViewport } from "utils";
 
 const pStyle = "my-10 leading-7";
 
 export const GetCreative = () => {
+  const elementRef = useRef();
+  const isInViewport = useIsInViewport(elementRef);
+
+  // ANIMATIONS
+  const setShrinkStyle = (inViewPort) => ({
+    transition: "all 1s ease-in",
+    transform: inViewPort ? "" : "rotate(45deg)",
+  });
+
+  const getShrinkLineStyle = (inViewPort) => ({
+    transition: "all 0.5s ease-in",
+    transform: inViewPort ? "" : "scalex(4)",
+    transformOrigin: "left",
+  });
+
   return (
     <section data-name="GetCreative" className="relative">
       <div
@@ -14,10 +31,16 @@ export const GetCreative = () => {
           <img
             className="absolute -top-[16rem] -left-[11rem] min-w[17rem]"
             src={process.env.PUBLIC_URL + "/images/gold-donut.png"}
+            style={setShrinkStyle(isInViewport)}
           />
           <div className="col-start-2">
-            <h2 className="text-3xl font-bold ">Get creative!</h2>
-            <hr className="w-16 border-gray-blue-light border my-12" />
+            <h2 className="text-3xl font-bold " ref={elementRef}>
+              Get creative!
+            </h2>
+            <hr
+              className="w-16 border-gray-blue-light border my-12"
+              style={getShrinkLineStyle(isInViewport)}
+            />
             <p className={pStyle}>
               You'll always have the option to apply your proceeds to a new
               purchase of precious metals for your collection or investments.

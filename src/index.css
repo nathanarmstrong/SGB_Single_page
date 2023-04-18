@@ -5,13 +5,13 @@
 body {
   margin: 0;
   overflow-x: hidden;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
 }
 #root {
   overflow-x: hidden;

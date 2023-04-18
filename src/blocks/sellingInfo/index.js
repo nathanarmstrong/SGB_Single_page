@@ -1,15 +1,31 @@
+import { useRef } from "react";
 import { Inset, Highlights } from "components";
+import { useIsInViewport } from "utils";
 
 export const SellingInfo = () => {
+  const elementRef = useRef();
+  const isInViewport = useIsInViewport(elementRef);
+
+  // ANIMATIONS
+  const getShrinkLineStyle = (inViewPort) => ({
+    transition: "all 0.5s ease-in",
+    transform: inViewPort ? "" : "scalex(4)",
+    transformOrigin: "left",
+  });
+
   return (
-    <section data-name="SellingInfo">
+    <section data-name="SellingInfo" className="my-10">
       <Inset>
         <h2 className="text-3xl font-semibold ">
           Selling your jewellery, silverware, and
           <br />
           other unwanted metals is simple!
         </h2>
-        <hr className="w-16 border-gray-blue-light border my-16" />
+        <hr
+          className="w-16 border-gray-blue-light border my-16"
+          style={getShrinkLineStyle(isInViewport)}
+          ref={elementRef}
+        />
         <p className="my-16">
           Sell gold, silver, platinum, or palladium in any amount. You get a
           quick quote and the

@@ -1,10 +1,24 @@
+import { useRef } from "react";
 import { Inset, NumberedInfo } from "components";
+import { useIsInViewport } from "utils";
 
 export const About = () => {
+  const elementRef = useRef();
+  const isInViewport = useIsInViewport(elementRef);
+
+  // ANIMATIONS
+  const getGrowStyle = (inViewPort) => ({
+    transition: "all 1s ease-in",
+    transform: inViewPort ? "" : "scale(0.8)",
+  });
+
   return (
     <section data-name="About" className="bg-dark text-gray-light relative">
       <Inset>
-        <div className="grid md:grid-cols-2 md:grid-rows-5  grid-cols-1 gap-x-28 gap-y-20 md:gap-y-2 text-gray-light my-20">
+        <div
+          ref={elementRef}
+          className="grid md:grid-cols-2 md:grid-rows-5  grid-cols-1 gap-x-28 gap-y-20 md:gap-y-2 text-gray-light my-20"
+        >
           <div className="md:row-span-2 md:col-start-1 h-full w-full ">
             <NumberedInfo
               title="Best price guarantee"
@@ -45,6 +59,7 @@ export const About = () => {
         className="absolute md:bottom-8 -bottom-32 left-1/2 -ml-2 max-h-80"
         src={process.env.PUBLIC_URL + "/images/canada-gold-mint.png"}
         alt="canadian-mint-full"
+        style={getGrowStyle(isInViewport)}
       />
     </section>
   );

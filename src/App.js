@@ -1,6 +1,6 @@
 import "./App.css";
 import { Home } from "pages";
-import { Nav } from "components";
+import { Nav, Footer } from "components";
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
       <Home />
 
       {/* FOOTER */}
+      <Footer />
     </div>
   );
 }

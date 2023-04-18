@@ -28,7 +28,7 @@ export const GetCreative = () => {
             </p>
           </div>
         </div>
-        <div className="grid md:grid-cols-2 md:gap-20">
+        <div className="grid md:grid-cols-2 md:gap-20 mb-12">
           <CallToAction
             img={process.env.PUBLIC_URL + "/images/dollar-sign.png"}
             titleList={["Free live", "quote!"]}

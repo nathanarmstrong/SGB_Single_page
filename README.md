@@ -1,8 +1,38 @@
-# Getting Started with Create React App
+# Silver Gold Bull Single Page Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description of Deliverables
 
-## Available Scripts
+TODO:
+• Single Page with React Calendly Control
+• List of Test Cases that you did to test the page?
+• List of possible things we can do to improve the page (if any?)
+
+Description:
+We have been asked by marketing to convert a landing page from instapage to be integrated into our application and allow clients to book a time to meet with us. Below you will find a screen capture of the page and I have attached a zip file containing the images and the font is Poppins https://fonts.googleapis.com/css?family=Poppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&subset=latin%2Clatin-ext&display=swap,
+
+Create the page and add a react based calendly calendar booking where the signup form is now. Do not reproduce the sub pages such as Registered Savings FAQ, privacy policy, terms & Conditions etc.
+
+## Run Locally
+
+### `npm install`
+
+### `npm start`
+
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+## TEST CASES
+
+Entered first name last name and email (fake email), selected the first possible date and time (today, but 5 hours a head of current time) - got message saying message wasn’t delivered because address cant be found. time was still booked, looks like you need to manually cancel those appointments, needs more research.
+
+Remove name and emails just before booking. throws error saying those field are needed.
+
+Using the email I used for calendly. books but only I am in the meeting.
+
+## IMPROVEMENTS
+
+Add Google Captcha to restrict bots from abusing the no valid email issues.
+
+## Other Available Scripts
 
 In the project directory, you can run:
 

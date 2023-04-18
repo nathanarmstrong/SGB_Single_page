@@ -16,7 +16,7 @@ Create the page and add a react based calendly calendar booking where the signup
 
 ### `npm install`
 
-### `npm start`
+### `npm run start`
 
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
@@ -36,7 +36,7 @@ Add Google Captcha to restrict bots from abusing the no valid email issues.
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
